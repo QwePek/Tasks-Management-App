@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
-@Service
-public class TaskService implements ITaskService {
+public class TaskService  {
 
     private final TaskRepository taskRepository;
 
@@ -17,11 +16,10 @@ public class TaskService implements ITaskService {
     public String getString() {
         return "elo srako";
     }
-
-    @Override
-    public List<Task> getAll() {
-        return (List<Task>)taskRepository.findAll();
-    }
+//
+//    public List<Task> getAll() {
+//        return (List<Task>)taskRepository.findAll();
+//    }
 
     public void addTasks() {
         for (int i = 0; i < 50; i++) {
@@ -30,7 +28,7 @@ public class TaskService implements ITaskService {
             task.setCreationDate(LocalDate.now());
             task.setDueDate(LocalDate.now().plusDays(i));
             task.setDescription("Description " + i);
-            taskRepository.save(task);
+//            taskRepository.save(task);
         }
     }
 }

@@ -1,0 +1,76 @@
+#popup_background {
+    background-color: rgba(0, 0, 0, 0.459);
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    visibility: hidden;
+    display: none;
+    z-index: 9999;
+    overflow-y:auto;
+}
+
+#popup_window {
+    position: relative;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    border: 1px solid rgb(220, 220, 220);;
+    border-radius: 10px;
+    width:500px;
+    height:600px;
+}
+
+#popup_background.show {
+    visibility:visible;
+    display: block;
+}
+
+#popup_exit {
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: rgb(235, 235, 235);
+    top:20px;
+    right:20px;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+#popup_exit:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+#popup_title {
+    width: 90%;
+    background-color: whitesmoke;
+    font-size:20px;
+    font-weight: 600;
+    border-radius: 4px;
+    line-height: 24px;
+    min-height: 24px;
+    resize:none;
+    overflow:hidden;
+    overflow-wrap: break-word;
+}
+
+#popup_description_title {
+    text-align: left;
+    font-weight: 600;
+    font-size:16px;
+}
+
+#popup_description {
+    width: 90%;
+    background-color: whitesmoke;
+    font-size:12px;
+    border-radius: 4px;
+    line-height: 18px;
+    min-height: 128px;
+    resize:none;
+    overflow:hidden;
+    overflow-wrap: break-word;
+}

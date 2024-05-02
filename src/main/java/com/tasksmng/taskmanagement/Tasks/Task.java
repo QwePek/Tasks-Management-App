@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name="TASKS")
 public class Task {
 
     @Id

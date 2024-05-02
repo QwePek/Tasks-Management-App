@@ -2,11 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Strona tytulowa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./js/Dependencies/jquery-ui.css">
+    <link rel="stylesheet" href="./css/column.css">
+    <link rel="stylesheet" href="./css/popupWindow.css">
 </head>
 <body>
-    <p>
-        <a href="api/Tasks/GetAll">Poka wszystkie Taski!</a>
-    </p>
+    <div id="header">
+        <h1>Moja Strona Trello</h1>
+    </div>
+    
+    <div id="popup_background">
+        <div id="popup_window">
+            <div id="popup_header">
+                <textarea id="popup_title"></textarea>
+                <button id="popup_exit">X</button>
+            </div>
+            <p id="popup_description_title">Description</p>
+            <textarea id="popup_description"></textarea>
+        </div>
+    </div>
+        
+    <ol id="container">
+        <div class="column" id="column1">
+            <li>
+                <div>
+                    <input type="text" class="columnHeader" placeholder="Column name"></input>
+                    <button class="addButton">+</button>
+                </div>
+                <ol class="columnCards">
+                    <li class="card">Karta 1<span class="editButton">Edit</span></li>
+                    <li class="card">Karta 4<span class="editButton">Edit</span></li>
+                </ol>
+            </li>
+        </div>
+        <div class="column" id="column2">
+            <li>
+                <div>
+                    <input type="text" class="columnHeader" placeholder="Column name"></input>
+                    <button class="addButton">+</button>
+                </div>
+                <ol class="columnCards">
+                    <li class="card">Karta 2<span class="editButton">Edit</span></li>
+                </ol>
+            </li>
+        </div>
+        <div class="column" id="column3">
+            <li>
+                <div>
+                    <input type="text" class="columnHeader" placeholder="Column name"></input>
+                    <button class="addButton">+</button>
+                </div>
+                <ol class="columnCards">
+                    <li class="card">Karta 3<span class="editButton">Edit</span></li>
+                </ol>
+            </li>
+        </div>
+    </ol>
+
+    <script src="./js/Dependencies/jquery-3.6.0.min.js"></script>
+    <script src="./js/Dependencies/jquery-ui.min.js"></script>
+    <script src="./js/columnCardsScript.js"></script>
+    <script src="./js/cardEditScript.js"></script>
 </body>
 </html>

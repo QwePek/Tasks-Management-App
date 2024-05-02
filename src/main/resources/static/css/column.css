@@ -1,0 +1,127 @@
+html {
+  height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+      
+  #header {
+    background-color: #0079BF;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  #container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0px;
+    height: 100%;
+    overflow-x: auto;
+  }
+
+  .column > li {
+    background-color: #E2E4E6;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    height:100%;
+
+    border-radius: 5px;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .columnCards {
+    list-style-type: none;
+    padding:0px;
+  }
+  
+  .card {
+    background-color: #FFFFFF;
+    border-radius:5px;
+    height:auto;
+    width:280px;
+    padding:10px;
+    margin:10px 0;
+    transition: translation 0.2s;
+
+    position: relative;
+  }
+
+  .activeLoo {
+    background-color: red;
+  }
+
+  .columnHeader {
+    font-size: 1.5em;
+    background-color: #E2E4E6;
+    text-align: center;
+    border: 0px;
+    width: 89%;
+    margin: 0px;
+    padding: 0;
+  }
+
+  .columnBetween {
+    height: 10px;
+    margin: 0px 20px;
+    display:block;
+    transition: 0.1s;
+  }
+
+  .card-dragging {
+    border:#0079BF 1px solid;
+    margin-bottom: -2px;
+    transform: rotate(2deg);
+  }
+  
+  .card:hover {
+    background-color:#F4F4F4;
+  }
+
+  .cardExtension {
+    height: 0px;
+    display:block;
+    transition: 0.1s;
+  }
+  .cardExtension.activated {
+    background-color:gray;
+    border-radius: 5px;
+    height: 10px;
+  }
+
+  .editButton {
+    position:absolute;
+    right: 5px;
+    top:5px;
+
+    background-color: wheat;
+    border-radius: 5px;
+    padding: 5px;
+
+    cursor: pointer;
+  }
+
+  .addButton {
+    border: 1px solid rgb(241, 199, 120); 
+
+    background-color: wheat;
+    border-radius: 5px;
+    padding: 5px;
+    height: 26px;
+    width: 26px;
+    line-height: 18px;
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+  }

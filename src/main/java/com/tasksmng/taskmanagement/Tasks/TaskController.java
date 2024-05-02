@@ -7,8 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.HashMap;
 import java.util.List;
 
-@RestController
-@RequestMapping("api/Tasks")
 public class TaskController {
 
     private final ITaskService taskService;
@@ -17,7 +15,6 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @GetMapping("/GetAll")
     public ModelAndView GetAll() {
         List<Task> tasks = taskService.getAll();
         HashMap<String, Object> params = new HashMap<String,Object>();
@@ -27,7 +24,6 @@ public class TaskController {
         return new ModelAndView("getAllTasks", params);
     }
 
-    @PostMapping("/add")
     public String addTasks() {
         taskService.addTasks();
         return "Tasks added successfully...";
