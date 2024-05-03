@@ -9,6 +9,7 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @jakarta.persistence.Column(name="name", nullable = false)
     private String name;
 
     public Board() {}
