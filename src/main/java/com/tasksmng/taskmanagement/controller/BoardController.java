@@ -48,6 +48,13 @@ public class BoardController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @GetMapping("/name/{name}")
+    public ResponseEntity<Board> getBoardByName(@PathVariable String name) {
+        Board board = boardService.getBoardByName(name)
+                .orElseThrow(() -> new ResourceNotFoundException("Board not found with name: " + name));
+        return new ResponseEntity<>(board, HttpStatus.OK);
+    }
+
     @GetMapping("/AddBoard")
     public String addTasks() {
         boardService.addBoard(1L);

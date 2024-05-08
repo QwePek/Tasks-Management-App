@@ -1,9 +1,20 @@
-$(document).ready(function() {
-    // Wywołanie funkcji po załadowaniu dokumentu
-    updateColumnHeights();
-});
-
 var containerDiv = $("#container");
+
+window.columnFunction = function ()  {
+    $( ".card" ).each(function(i, elem) {
+        addFunctionalityToCard(elem);
+    });
+
+    $(".column").each(function(i, elem) {
+        addDroppableColumnBetween(elem);
+    });
+
+    $(".addButton").on("click", function() {
+        var currColumn = $(this).parent().next();
+        addNewCard(currColumn);
+        updateColumnHeights();
+    });
+};
 
 // Funkcja do aktualizacji szerokości kolumn
 function updateColumnHeights() {
@@ -49,16 +60,6 @@ function updateCardExtensions() {
         }
     }
 }
-
-$( function() {
-    $( ".card" ).each(function(i, elem) {
-        addFunctionalityToCard(elem);
-    });
-
-    $(".column").each(function(i, elem) {
-        addDroppableColumnBetween(elem);
-    });
-} );
 
 function addDroppableColumnBetween(elemAdd) {
     $(elemAdd).droppable({
@@ -164,12 +165,6 @@ function getIDToDropTo(columnCards, mousePos, dropElement) {
             //elemAfter.before(dropElement);
     }
 }
-
-$(".addButton").on("click", function() {
-    currColumn = $(this).parent().next();
-    addNewCard(currColumn);
-    updateColumnHeights();
-});
 
 function addNewCard(column) {
     var newElem = $('<li class="card">New card<span class="editButton">Edit</span></li>');

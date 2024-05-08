@@ -1,5 +1,6 @@
 package com.tasksmng.taskmanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -23,12 +24,19 @@ public class Card {
     @jakarta.persistence.Column(name="due_date", nullable = true)
     private LocalDate DueDate;
 
-    @OneToOne
-    @JoinColumn(name="column_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="column_id")
+    @JsonIgnore
     private Column column;
 
-
     public Card() { }
+
+    public Card(String title, String description, LocalDate creationDate, LocalDate dueDate) {
+        setTitle(title);
+        setDescription(description);
+        setCreationDate(creationDate);
+        setDueDate(dueDate);
+    }
 
     public Long getId() {
         return id;
@@ -76,5 +84,17 @@ public class Card {
 
     public void setColumn(Column column) {
         this.column = column;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Card )) return false;
+        return id != null && id.equals(((Card) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

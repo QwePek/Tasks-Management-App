@@ -8,10 +8,11 @@ body {
     display:flex;
     flex-direction: column;
     align-items: stretch;
+  background-color: #903f66;
   }
       
   #header {
-    background-color: #0079BF;
+    background-color: #0079BF3d;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -26,7 +27,8 @@ body {
   }
 
   .column > li {
-    background-color: #E2E4E6;
+    background-color: #101204;
+    color: white;
     width: 300px;
     margin: 10px;
     padding: 10px;
@@ -41,11 +43,11 @@ body {
 
   .columnCards {
     list-style-type: none;
-    padding:0px;
+    padding:0;
   }
   
   .card {
-    background-color: #FFFFFF;
+    background-color: #22272b;
     border-radius:5px;
     height:auto;
     width:280px;
@@ -56,13 +58,18 @@ body {
     position: relative;
   }
 
+  .card:hover {
+    background-color: #26272b;
+  }
+
   .activeLoo {
     background-color: red;
   }
 
   .columnHeader {
     font-size: 1.5em;
-    background-color: #E2E4E6;
+    background-color: #25282c00;
+    color:white;
     text-align: center;
     border: 0px;
     width: 89%;
@@ -82,10 +89,6 @@ body {
     margin-bottom: -2px;
     transform: rotate(2deg);
   }
-  
-  .card:hover {
-    background-color:#F4F4F4;
-  }
 
   .cardExtension {
     height: 0px;
@@ -99,6 +102,7 @@ body {
   }
 
   .editButton {
+    color: black;
     position:absolute;
     right: 5px;
     top:5px;

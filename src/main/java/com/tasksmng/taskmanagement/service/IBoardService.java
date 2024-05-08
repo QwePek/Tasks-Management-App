@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface IBoardService {
     public List<Board> getAllBoards();
     public Optional<Board> getBoardById(Long id);
+    public Optional<Board> getBoardByName(String name);
 
     public Board createBoard(Board board);
     public Board updateBoard(Long id, Board updatedBoard);
