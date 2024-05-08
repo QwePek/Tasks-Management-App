@@ -3,7 +3,6 @@ package com.tasksmng.taskmanagement.controller;
 import com.tasksmng.taskmanagement.exceptions.ResourceNotFoundException;
 import com.tasksmng.taskmanagement.model.Card;
 import com.tasksmng.taskmanagement.service.ICardService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/card")
 public class CardController {
-    @Autowired
-    private ICardService cardService;
+    private final ICardService cardService;
+
+    public CardController(ICardService cardService) {
+        this.cardService = cardService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Card>> getAllCards() {

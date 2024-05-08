@@ -10,13 +10,14 @@
 }
 
 #popup_window {
+    background-color: #101204;
+    color:white;
     position: relative;
     top: 150px;
     left: 50%;
     transform: translate(-50%);
-    background-color: rgb(235, 235, 235);
     padding: 20px;
-    border: 1px solid rgb(220, 220, 220);;
+    border: 2px solid #282925;
     border-radius: 10px;
     width:500px;
     height:600px;
@@ -30,7 +31,8 @@
 #popup_exit {
     border-radius: 5px;
     border: 1px solid gray;
-    background-color: rgb(235, 235, 235);
+    background-color: #101204;
+    color:white;
     top:20px;
     right:20px;
     height: 30px;
@@ -41,12 +43,13 @@
 }
 
 #popup_exit:hover {
-    background-color: rgb(221, 221, 221);
+    background-color: #1e1f19;
 }
 
 #popup_title {
     width: 90%;
-    background-color: whitesmoke;
+    background-color: #1c1d17;
+    color:white;
     font-size:20px;
     font-weight: 600;
     border-radius: 4px;
@@ -65,7 +68,8 @@
 
 #popup_description {
     width: 90%;
-    background-color: whitesmoke;
+    background-color: #1c1d17;
+    color:white;
     font-size:12px;
     border-radius: 4px;
     line-height: 18px;
@@ -73,4 +77,28 @@
     resize:none;
     overflow:hidden;
     overflow-wrap: break-word;
+}
+
+#popup_save {
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #101204;
+    color:white;
+    bottom:20px;
+    right:20px;
+    height: 30px;
+    width: 60px;
+    padding: 0;
+    position: absolute;
+    cursor: pointer;
+
+    transition: background-color 0.5s;
+}
+
+#popup_save:hover {
+    background-color: #1e1f19;
+}
+
+#popup_save.wait {
+    background-color: #c8c9b1;
 }

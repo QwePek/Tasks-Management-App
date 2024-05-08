@@ -33,7 +33,7 @@ function generateBoard(board) {
             '</div>\n' +
             '<ol class="columnCards">\n';
         column.cards.forEach(function(card) {
-            html += '<li class="card">' + card.title + '<span class="editButton">Edit</span></li>\n';
+            html += '<li class="card" data-card-id="' + card.id + '">' + card.title + '<span class="editButton">Edit</span></li>\n';
         });
         html += '</ol>\n</li>\n</div>';
     });

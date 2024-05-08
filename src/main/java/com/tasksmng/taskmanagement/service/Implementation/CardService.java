@@ -32,13 +32,15 @@ public class CardService implements ICardService {
         if (existingCardOptional.isPresent()) {
             Card existingCard = existingCardOptional.get();
             existingCard.setTitle(updatedCard.getTitle());
-            // Set other properties as needed
+            existingCard.setDescription(updatedCard.getDescription());
+            existingCard.setDueDate(updatedCard.getDueDate());
+            existingCard.setCreationDate(updatedCard.getCreationDate());
             return cardRepository.save(existingCard);
         } else {
             throw new IllegalArgumentException("Card with id " + id + " not found.");
         }
     }
-
+    
     public void deleteCard(Long id) {
         cardRepository.deleteById(id);
     }
